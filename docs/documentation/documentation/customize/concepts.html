@@ -1,0 +1,189 @@
+---
+title: Avenue Customization Concepts
+layout: docs
+theme: customize
+doc-tab: customize
+doc-subtab: concepts
+breadcrumb:
+  - home
+  - documentation
+  - customize
+  - customize-concepts
+---
+
+{% capture markdown %}
+Avenue is a **highly customizable CSS framework**. From colors to typography, spacing and sizes, forms and layouts, all parts of Avenue can be customized by the user.
+
+Avenue's styles and variables are defined at several levels:
+
+* Global Sass variables
+* Component Sass variables
+* Global CSS variables
+* Component CSS variables
+* Helper classes
+
+All Avenue components are styled using **Sass variables** and **CSS Variables** (which are also called CSS custom properties). Read more about them:
+* [on the Sass website](https://sass-lang.com/documentation/variables/)
+* [on the MDN Reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+{% endcapture %}
+
+{% include markdown.html content=markdown %}
+
+{% include docs/elements/anchor.html name="Global Sass Variables" %}
+
+{% capture markdown %}
+Avenue uses Sass variables globally defined in 2 files located in the `utilities` folder:
+
+* `initial-variables.scss` where you define variables by literal value
+  * **colors** like `$blue: hsl(229, 53%, 53%)`
+  * **font sizes** like `$size-1: 3rem`
+  * **dimensions** like `$block-spacing: 1.5rem`
+  * **breakpoints** like `$tablet: 769px`
+  * **other values** like `$easing: ease-out` or `$radius-large: 0.75rem`
+* `derived-variables.scss` where variables are calculated from the values set in the previous file
+  * **primary colors**:
+    * `$primary`
+    * `$link`
+    * `$success`
+    * `$info`
+    * `$warning`
+    * `$dark`
+  * **utility colors**:
+    * `$background`
+    * `$border`
+    * `$code` and `$pre`
+    * `$shadow-color`
+  * **typography**:
+    * `$family-primary`
+    * `$family-secondary`
+    * `$family-code`
+    * `$size-small`
+    * `$size-normal`
+    * `$size-medium`
+    * `$size-large`
+  * color maps:
+    * `$colors`
+    * `$shades`
+    * `$sizes`
+{% endcapture %}
+
+{% include markdown.html content=markdown %}
+
+{% include docs/elements/anchor.html name="Component Sass variables" %}
+
+{% capture markdown %}
+All Avenue components define its own Sass variables. For example, `components/breadcrumb.scss` define the following:
+{% endcapture %}
+
+{% include markdown.html content=markdown %}
+
+{%
+  include docs/components/variables.html
+  tab="components"
+  subtab="breadcrumb"
+  hide_css_vars=true
+%}
+
+{% include docs/elements/anchor.html name="Global CSS Variables" %}
+
+{% capture markdown %}
+Avenue uses global CSS variables defined at the `:root` level. They are all prefixed with `avenue-`:
+{% endcapture %}
+
+{% include markdown.html content=markdown %}
+
+{% highlight css %}
+:root {
+  /* Colors and Lightness values */
+  --avenue-scheme-h: 221;
+  --avenue-scheme-s: 14%;
+  --avenue-light-l: 90%;
+  --avenue-light-invert-l: 20%;
+  --avenue-dark-l: 20%;
+  --avenue-dark-invert-l: 90%;
+  --avenue-soft-l: 90%;
+  --avenue-bold-l: 20%;
+  --avenue-soft-invert-l: 20%;
+  --avenue-bold-invert-l: 90%;
+  /* etc. */
+
+  /* Color Palettes */
+  --avenue-primary: hsla(var(--avenue-primary-h), var(--avenue-primary-s), var(--avenue-primary-l), 1);
+  --avenue-primary-base: hsla(var(--avenue-primary-h), var(--avenue-primary-s), var(--avenue-primary-l), 1);
+  --avenue-primary-rgb: 0, 209, 178;
+  --avenue-primary-h: 171deg;
+  --avenue-primary-s: 100%;
+  --avenue-primary-l: 41%;
+  --avenue-primary-00-l: 1%;
+  --avenue-primary-05-l: 6%;
+  --avenue-primary-10-l: 11%;
+  --avenue-primary-15-l: 16%;
+  --avenue-primary-20-l: 21%;
+  /* etc. */
+
+  /* Typography */
+  --avenue-family-primary: Inter, SF Pro, Segoe UI, Roboto, Oxygen, Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --avenue-family-secondary: Inter, SF Pro, Segoe UI, Roboto, Oxygen, Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif;
+  --avenue-family-code: Inconsolata, Hack, SF Mono, Roboto Mono, Source Code Pro, Ubuntu Mono, monospace;
+  --avenue-size-small: 0.75rem;
+  --avenue-size-normal: 1rem;
+  --avenue-size-medium: 1.25rem;
+  --avenue-size-large: 1.5rem;
+  /* etc. */
+}
+{% endhighlight %}
+
+{% capture markdown %}
+You can **overwrite** them simply by setting a new value at the same scope (or even a more specific one):
+{% endcapture %}
+
+{% include markdown.html content=markdown %}
+{% highlight css %}
+:root {
+  /* Set new values */
+  --avenue-scheme-h: 35;
+  --avenue-scheme-s: 20%;
+}
+{% endhighlight %}
+
+{% include docs/elements/anchor.html name="Components CSS Variables" %}
+
+{% capture markdown %}
+Avenue is also styled at the **component** level. For example, here is how the `.title` element is styled:
+{% endcapture %}
+
+{% include markdown.html content=markdown %}
+
+{% highlight css %}
+.title {
+  --avenue-title-color: var(--avenue-text-strong);
+  --avenue-title-family: false;
+  --avenue-title-size: var(--avenue-size-3);
+  --avenue-title-weight: var(--avenue-weight-extrabold);
+  --avenue-title-line-height: 1.125;
+  --avenue-title-strong-color: inherit;
+  --avenue-title-strong-weight: inherit;
+  --avenue-title-sub-size: 0.75em;
+  --avenue-title-sup-size: 0.75em;
+}
+
+.title {
+  color: var(--avenue-title-color);
+  font-size: var(--avenue-title-size);
+  font-weight: var(--avenue-title-weight);
+  line-height: var(--avenue-title-line-height);
+}
+{% endhighlight %}
+
+{% capture markdown %}
+You can overwrite this simply by setting new values under the same scope:
+{% endcapture %}
+
+{% include markdown.html content=markdown %}
+
+{% highlight css %}
+.title {
+  --avenue-title-color: #fff;
+  --avenue-title-line-height: 1.6;
+}
+{% endhighlight %}

@@ -1,0 +1,30 @@
+{% if include.color %}
+  {% assign name = include.color | prepend: '-' %}
+{% else %}
+  {% assign name = '' %}
+{% endif %}
+
+<tr>
+  <td>
+    <strong>Background</strong>
+  </td>
+  <td>
+    <code>--avenue-primary{{ name }}</code>
+  </td>
+  <td rowspan="2" style="vertical-align: middle;">
+    <span
+      class="bd-color-swatch"
+      style="--background: var(--avenue-primary{{ name }}); --color: var(--avenue-primary{{ name }}-invert);"
+    >
+      avenue-primary{{ name }}-invert <strong>on</strong> avenue-primary{{ name }}
+    </span>
+  </td>
+</tr>
+<tr>
+  <td>
+    <strong>Foreground</strong>
+  </td>
+  <td>
+    <code>--avenue-primary{{ name }}-invert</code>
+  </td>
+</tr>

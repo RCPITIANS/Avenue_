@@ -1,0 +1,143 @@
+{
+  "sass-vars": [
+    {
+      "name": "navbar-background-color",
+      "value": "var(--avenue-scheme-main)"
+    },
+    {
+      "name": "navbar-box-shadow-size",
+      "value": "0 0.125em 0 0"
+    },
+    {
+      "name": "navbar-box-shadow-color",
+      "value": "var(--avenue-background)"
+    },
+    {
+      "name": "navbar-height",
+      "value": "3.25rem",
+      "css-var": "navbar-height"
+    },
+    {
+      "name": "navbar-padding-vertical",
+      "value": "1rem"
+    },
+    {
+      "name": "navbar-padding-horizontal",
+      "value": "2rem"
+    },
+    {
+      "name": "navbar-z",
+      "value": "30"
+    },
+    {
+      "name": "navbar-fixed-z",
+      "value": "30"
+    },
+    {
+      "name": "navbar-item-img-max-height",
+      "value": "1.75rem"
+    },
+    {
+      "name": "navbar-burger-color",
+      "value": "var(--avenue-navbar-item-color)"
+    },
+    {
+      "name": "navbar-tab-hover-background-color",
+      "value": "transparent"
+    },
+    {
+      "name": "navbar-tab-hover-border-bottom-color",
+      "value": "var(--avenue-link)"
+    },
+    {
+      "name": "navbar-tab-active-color",
+      "value": "var(--avenue-link)"
+    },
+    {
+      "name": "navbar-tab-active-background-color",
+      "value": "transparent"
+    },
+    {
+      "name": "navbar-tab-active-border-bottom-color",
+      "value": "var(--avenue-link)"
+    },
+    {
+      "name": "navbar-tab-active-border-bottom-style",
+      "value": "solid"
+    },
+    {
+      "name": "navbar-tab-active-border-bottom-width",
+      "value": "0.1875em"
+    },
+    {
+      "name": "navbar-dropdown-background-color",
+      "value": "var(--avenue-scheme-main)"
+    },
+    {
+      "name": "navbar-dropdown-border-l",
+      "value": "var(--avenue-border-l)"
+    },
+    {
+      "name": "navbar-dropdown-border-color",
+      "value": "hsl(\n  var(--avenue-navbar-h),\n  var(--avenue-navbar-s),\n  var(--avenue-navbar-dropdown-border-l)\n)"
+    },
+    {
+      "name": "navbar-dropdown-border-style",
+      "value": "solid"
+    },
+    {
+      "name": "navbar-dropdown-border-width",
+      "value": "0.125em"
+    },
+    {
+      "name": "navbar-dropdown-offset",
+      "value": "-0.25em"
+    },
+    {
+      "name": "navbar-dropdown-arrow",
+      "value": "var(--avenue-link)"
+    },
+    {
+      "name": "navbar-dropdown-radius",
+      "value": "var(--avenue-radius-large)"
+    },
+    {
+      "name": "navbar-dropdown-z",
+      "value": "20"
+    },
+    {
+      "name": "navbar-dropdown-boxed-radius",
+      "value": "var(--avenue-radius-large)"
+    },
+    {
+      "name": "navbar-dropdown-boxed-shadow",
+      "value": "0 0.5em 0.5em\n    hsla(\n      var(--avenue-scheme-h),\n      var(--avenue-scheme-s),\n      var(--avenue-scheme-invert-l),\n      0.1\n    ),\n  0 0 0 1px\n    hsla(\n      var(--avenue-scheme-h),\n      var(--avenue-scheme-s),\n      var(--avenue-scheme-invert-l),\n      0.1\n    )"
+    },
+    {
+      "name": "navbar-divider-background-l",
+      "value": "var(--avenue-background-l)"
+    },
+    {
+      "name": "navbar-divider-height",
+      "value": "0.125em"
+    },
+    {
+      "name": "navbar-bottom-box-shadow-size",
+      "value": "0 -0.125em 0 0"
+    },
+    {
+      "name": "navbar-breakpoint",
+      "value": "iv.$desktop"
+    },
+    {
+      "name": "navbar-colors",
+      "value": "dv.$colors"
+    }
+  ],
+  "css-vars": [
+    {
+      "name": "navbar-height",
+      "value": "3.25rem"
+    }
+  ]
+}

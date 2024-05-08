@@ -1,0 +1,199 @@
+---
+title: Extensions
+layout: default
+theme: customize
+route: extensions
+breadcrumb:
+- home
+- more
+- extensions
+extensions:
+- name: avenue-o-steps
+  url: https://octoshrimpy.github.io/avenue-o-steps/
+  slug: avenue-o-steps
+  width: 401
+  height: 352
+- name: avenue-accordion
+  url: https://wikiki.github.io/components/accordion
+  slug: avenue-accordion
+  width: 640
+  height: 310
+- name: avenue-carousel
+  url: https://wikiki.github.io/components/carousel
+  slug: avenue-carousel
+  width: 640
+  height: 433
+- name: avenue-quickview
+  url: https://wikiki.github.io/components/quickview
+  slug: avenue-quickview
+  width: 1438
+  height: 499
+- name: avenue-iconpicker
+  url: https://wikiki.github.io/form/iconpicker
+  slug: avenue-iconpicker
+  width: 237
+  height: 89
+- name: avenue-tagsinput
+  url: https://wikiki.github.io/form/tagsinput
+  slug: avenue-tagsinput
+  width: 423
+  height: 50
+- name: avenue-tagsfield
+  url: https://github.com/vyachkonovalov/avenue-tagsfield
+  slug: avenue-tagsfield
+  width: 471
+  height: 70
+- name: avenue-pricingtable
+  url: https://wikiki.github.io/components/pricingtable
+  slug: avenue-pricingtable
+  width: 1301
+  height: 428
+- name: avenue-megamenu
+  url: https://github.com/hunzaboy/avenue-megamenu
+  slug: avenue-megamenu
+  width: 668
+  height: 182
+- name: avenue-coolcheckboxes
+  url: https://github.com/hunzaboy/Cool-Checkboxes-for-Avenue.io
+  slug: avenue-coolcheckbox
+  width: 450
+  height: 184
+- name: avenue-slider
+  url: https://wikiki.github.io/form/slider
+  slug: avenue-slider
+  width: 647
+  height: 166
+- name: avenue.io-axure
+  url: https://github.com/AGmakonts/Avenue.io-axure
+  slug: avenue.io-axure
+  width: 888
+  height: 541
+- name: avenue-checkradio
+  url: https://wikiki.github.io/form/checkradio
+  slug: avenue-checkradio
+  width: 247
+  height: 193
+- name: avenue-switch
+  url: https://wikiki.github.io/form/switch
+  slug: avenue-switch
+  width: 193
+  height: 193
+- name: avenue-steps (alternative)
+  url: https://aramvisser.github.io/avenue-steps/
+  slug: avenue-steps-alternative
+  width: 1078
+  height: 280
+- name: avenue-divider
+  url: https://wikiki.github.io/layout/divider
+  slug: avenue-divider
+  width: 651
+  height: 54
+- name: avenue-calendar
+  url: https://wikiki.github.io/components/calendar
+  slug: avenue-calendar
+  width: 338
+  height: 352
+- name: avenue-pageloader
+  url: https://wikiki.github.io/elements/pageloader
+  slug: avenue-pageloader
+  width: 245
+  height: 139
+- name: avenue-ribbon
+  url: https://github.com/Wikiki/avenue-ribbon
+  slug: avenue-ribbon
+  width: 323
+  height: 87
+- name: avenue-badge
+  url: https://wikiki.github.io/elements/badge
+  slug: avenue-badge
+  width: 623
+  height: 211
+- name: avenue-steps
+  url: https://wikiki.github.io/components/steps
+  slug: avenue-steps
+  width: 1294
+  height: 147
+- name: avenue-tooltip
+  url: https://wikiki.github.io/elements/tooltip
+  slug: avenue-tooltip
+  width: 215
+  height: 55
+- name: avenue-timeline
+  url: https://wikiki.github.io/components/timeline
+  slug: avenue-timeline
+  width: 634
+  height: 469
+- name: avenue-toast
+  url: https://rfoel.github.io/avenue-toast/
+  slug: avenue-toast
+  width: 208
+  height: 173
+- name: avenue-dashboard
+  url: https://github.com/lucperkins/avenue-dashboard
+  slug: avenue-dashboard
+- name: avenue-block-list
+  url: https://github.com/chrisrhymes/avenue-block-list
+  slug: avenue-block-list
+- name: avenue-spacing
+  url: https://github.com/kaangokdemir/avenue-spacing
+  slug: avenue-spacing
+- name: avenue-list
+  url: https://bluefantail.github.io/avenue-list
+  slug: avenue-list
+  width: 1186
+  height: 480
+- name: avenue-jumbo-tiny
+  url: https://thirstyape.github.io/Avenue-Jumbo-Tiny/index.html
+  slug: avenue-jumbo-tiny
+---
+
+{% include global/header.html %}
+
+{%
+  include docs/hero.html
+  title="Avenue extensions"
+  subtitle="Side projects to enhance your Avenue experience."
+%}
+
+{% capture call_button %}
+<a class="button bd-fat-button is-extensions is-medium"
+  href="https://github.com/jgthms/avenue/pulls"
+  target="_blank">
+  <span class="icon">
+    <i class="fas fa-code-branch"></i>
+  </span>
+  <span>
+    Submit a Pull Request
+  </span>
+</a>
+{% endcapture %}
+
+{%
+  include docs/components/call.html
+  color="extensions"
+  text='Have an <strong>extension</strong> to <strong>share</strong> with the community?'
+  button=call_button
+%}
+
+<section class="section">
+  <div class="fixed-grid has-1-cols-mobile">
+  <div class="grid is-gap-6">
+    {% for extension in page.extensions %}
+      <a class="cell" href="{{ extension.url }}" target="_blank" rel="nofollow">
+        <div class="block">
+          <h3 class="title is-5">
+            {{ extension.name }}
+          </h3>
+          <div class="subtitle is-6">
+            {{ extension.url | remove:'http://' | remove:'https://' | remove:'www.' }}
+          </div>
+        </div>
+
+        <figure class="has-background is-flex is-justify-content-center p-3 has-radius">
+          <img src="{{site.url}}/assets/images/extensions/{{ extension.slug }}.png" width="{{ extension.width }}" height="{{ extension.height }}">
+        </figure>
+      </a>
+    {% endfor %}
+  </div>
+  </div>
+</section>

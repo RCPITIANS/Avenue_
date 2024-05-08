@@ -1,0 +1,26 @@
+{
+  "sass-vars": [
+    {
+      "name": "label-color",
+      "value": "var(--avenue-text-strong)"
+    },
+    {
+      "name": "label-weight",
+      "value": "var(--avenue-weight-semibold)"
+    },
+    {
+      "name": "help-size",
+      "value": "var(--avenue-size-small)"
+    },
+    {
+      "name": "label-colors",
+      "value": "shared.$form-colors"
+    }
+  ],
+  "css-vars": [
+    {
+      "name": "block-spacing",
+      "value": "0.75rem,"
+    }
+  ]
+}
